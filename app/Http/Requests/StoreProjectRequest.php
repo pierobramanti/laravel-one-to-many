@@ -27,6 +27,7 @@ class StoreProjectRequest extends FormRequest
             'title' => 'required|max:255',
             'description' => 'nullable|string',
             'date' => 'required|date',
+            'type_id' => 'nullable|exists:types,id'
         ];
     }
 
@@ -37,6 +38,8 @@ class StoreProjectRequest extends FormRequest
             
             'date.required' => 'La data è obbligatoria.',
             'date.date' => 'La data deve essere in un formato valido.',
+
+            'type_id.exists' => 'Il tipo di progetto selezionato non è valido.' 
             
         ];
     }
