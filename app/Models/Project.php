@@ -22,4 +22,8 @@ class Project extends Model
     {
         return Str::slug($title, '_'); 
     }
+
+    public function type() {
+        return $this->belongsTo(Type::class);
+    }
 }
