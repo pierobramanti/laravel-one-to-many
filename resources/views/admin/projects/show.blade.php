@@ -21,6 +21,7 @@
                             <li><strong>Slug:</strong> {{ $project->slug }}</li>
                             <li><strong>Description:</strong> {{ $project->description ?? 'Nessuna descrizione disponibile' }}</li>
                             <li><strong>Date:</strong> {{ $project->date }}</li>
+                            <li><strong>Type:</strong> {{ $project->type ? $project->type->name : 'Nessun tipo assegnato' }}</li>
                         </ul>
                         <div class="mt-4">
                             <h5>Immagine del Progetto</h5>
