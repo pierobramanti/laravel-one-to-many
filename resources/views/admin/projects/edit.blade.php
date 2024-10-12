@@ -44,6 +44,19 @@
                         <input type="file" name="image" id="image" class="form-control">
                     </div>
                     <div class="col-12 mb-3">
+                    <label class="control-label" for="type">Seleziona il tipo di progetto</label>
+                    <select class="form-control" name="type_id" required>
+                        <option value="">-- Seleziona un tipo --</option>
+                        @foreach ($types as $type)
+                            <option value="{{ $type->id }}" @selected($type->id == old('type_id', $project->type_id))>{{ $type->name }}</option>
+                        @endforeach
+                    </select>
+
+                    @error('type_id')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                    </div>
+                    <div class="col-12 mb-3">
                         <label for="date" class="control-label">Data</label>
                         <input type="date" name="date" id="date" class="form-control" value="{{ old('date', $project->date) }}">
                         @error('date')
